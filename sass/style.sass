@@ -1,0 +1,155 @@
+* 
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+body 
+    overflow: hidden
+
+#sky
+    position: relative
+    height: 60vh
+    background-color: #8aa9ff  
+    animation: sky 8s infinite linear
+
+.sun 
+    position: relative
+    top: 30px
+    left: 50%
+    transform: translateX(-40px)
+    height: 80px
+    width: 80px
+    background-color: #fffb00
+    border-radius: 50%
+    box-shadow: 0 0 50px #fffb00
+    animation: sun 8s infinite linear
+
+#ground
+    position: relative
+    bottom: 0
+    height: 40vh
+    background-image: linear-gradient(to bottom, #723300, #000)
+    
+.grass 
+    position: absolute
+    top: 0
+    height: 20vh
+    width: 100%
+    background-image: linear-gradient(to right, #3fc73b, #58ff52, #3fc73b)
+
+.road
+    position: absolute
+    top: 15px
+    height: 60px
+    width: 100%
+    background-image: linear-gradient(to right, #666666, #818181, #666666)
+
+.car
+    position: absolute
+    top: -35px
+    left: 200px
+    height: 65px
+    width: 120px
+    background-color: tomato
+    border-radius: 15% 
+    animation: car 8s ease-in infinite
+
+.car::before, .car::after
+    content: ''
+    position: absolute
+    bottom: 0
+    width: 50px
+    height: 35px
+    background-color: tomato
+    border-radius: 15% 
+
+.car::before
+    left: -30px
+
+.car::after
+    right: -30px
+
+.windows
+    position: absolute
+    top: 4px
+    height: 25px
+    width: 52px
+    background-color: royalblue
+    border: 1px solid black
+
+.rear-window
+    left: 4px
+    border-top-left-radius: 30%
+
+.front-window
+    right: 4px
+    border-top-right-radius: 30%
+
+.wheels
+    position: absolute
+    bottom: -12px
+    height: 30px
+    width: 30px
+    background-color: #000000
+    border: 2px dashed white
+    border-radius: 50%
+    animation: wheels 4s infinite linear
+
+.rear-wheel 
+    left: -10px
+
+.front-wheel 
+    right: -10px
+    z-index: 10
+
+@keyframes sun
+    0%
+        top: 1000px
+
+    30%
+        box-shadow: 0 0 30px #fffb02
+
+    40%
+        top: 50px
+        box-shadow: 0 0 30px orange
+
+    50%
+        box-shadow: 0 0 30px #fffb02
+
+    60%
+        top: 50px
+        box-shadow: 0 0 30px orange
+
+    70% 
+        box-shadow: 0 0 30px #fffb02
+            
+    100%
+        top: 1000px
+
+@keyframes car
+    from
+        left: -500px
+        
+    to
+        left: 2000px
+        
+@keyframes wheels
+    from
+        transform: rotate(0)
+        
+    to
+        transform: rotate(360deg)
+        
+@keyframes sky
+    0%
+        background-color: #000 
+            
+    40%
+        background-color: #8aa9ff  
+
+    60%
+        background-color: #8aa9ff  
+
+    100%
+        background-color: #000 
+            
